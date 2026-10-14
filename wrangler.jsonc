@@ -1,0 +1,13 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "tpm-command-center",
+	"main": "src/index.ts",
+	"compatibility_date": "2026-10-14",
+	"compatibility_flags": ["nodejs_compat"],
+	"assets": { "directory": "./public", "binding": "ASSETS" },
+	"ai": { "binding": "AI" },
+	"durable_objects": { "bindings": [{ "name": "RiskAgent", "class_name": "RiskAgent" }] },
+	"migrations": [{ "tag": "v1", "new_sqlite_classes": ["RiskAgent"] }],
+	"observability": { "enabled": true },
+	"upload_source_maps": true
+}
